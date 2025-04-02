@@ -1,6 +1,0 @@
-ESCOLA=https://app.brmodeloweb.com/#!/publicview/67e175ad588d8088285cc374;
-SEGURADORA=https://app.brmodeloweb.com/#!/publicview/67e14319588d8088285c9c18;
-LIVRARIA=https://app.brmodeloweb.com/#!/publicview/67e17605588d8088285cc39e;
-IMOBILIARIA= https://app.brmodeloweb.com/#!/publicview/67e17584588d8088285cc35e;
-
-OBS: Não consegui baixar o brModelo e optei por utilizar a versão web.
