@@ -1,0 +1,256 @@
+MariaDB [etecmcm2]> select * from produtos;
++------------+------------------------+-------+-------+----------------+--------------+
+| id_produto | nome                   | preco | quant | marca          | id_categoria |
++------------+------------------------+-------+-------+----------------+--------------+
+|          1 | Sabão em Pó            | 25.00 |     4 | OMO            |            1 |
+|          2 | Detergente             |  3.25 |    20 | Ypê            |            1 |
+|          3 | Mussarela              | 55.60 |   100 | Presidente     |            2 |
+|          4 | Iogurte natural        |  3.29 |   200 | Danone         |            2 |
+|          5 | Papel Aluminio         |  7.59 |    50 | Wyda           |            3 |
+|          6 | Papel Toalha           |  4.24 |    75 | Scala          |            3 |
+|          7 | Milho Verde            |  4.50 |    78 | Quero          |            4 |
+|          8 | Ervilha                |  3.52 |   150 | Quero          |            4 |
+|          9 | Carne Moída            | 35.90 |    60 | Friboi         |            5 |
+|         10 | Coxa de Frango         | 15.50 |    78 | Sadia          |            5 |
+|         11 | Detergente Ypê         |  2.49 |   100 | Ypê            |            1 |
+|         12 | Desinfetante Pinho Sol |  6.99 |    80 | Pinho Sol      |            1 |
+|         13 | Leite Integral         |  4.89 |   120 | Itambé         |            2 |
+|         14 | Iogurte Natural        |  2.75 |    90 | Nestlé         |            2 |
+|         15 | Papel Alumínio         |  5.50 |    60 | Wyda           |            3 |
+|         16 | Saco para Lixo 50L     |  7.30 |    70 | Plasútil       |            3 |
+|         17 | Ervilha                |  3.52 |   150 | Quero          |            4 |
+|         18 | Milho Verde            |  3.10 |   140 | Bonduelle      |            4 |
+|         19 | Carne Moída            | 35.90 |    60 | Friboi         |            5 |
+|         20 | Coxa de Frango         | 15.50 |    78 | Sadia          |            5 |
+|         21 | Banana Prata           |  4.20 |   100 | Fazenda Sul    |            6 |
+|         22 | Tomate Italiano        |  6.30 |    85 | Orgânicos Vida |            6 |
+|         23 | Shampoo Anticaspa      | 14.90 |    50 | Clear          |            7 |
+|         24 | Desodorante Spray      |  9.80 |    65 | Rexona         |            7 |
+|         25 | Refrigerante Cola 2L   |  7.50 |   200 | Coca-Cola      |            8 |
+|         26 | Suco de Uva Integral   | 12.00 |    90 | Aurora         |            8 |
+|         27 | Fone de Ouvido         | 49.90 |    40 | Multilaser     |            9 |
+|         28 | Carregador USB         | 29.90 |    55 | Samsung        |            9 |
+|         29 | Pizza Calabresa        | 18.90 |    60 | Perdigão       |           10 |
+|         30 | Lasanha Bolonhesa      | 17.50 |    50 | Sadia          |           10 |
+|         31 | Presunto Fatiado       |  6.80 |   100 | Seara          |           12 |
+|         32 | Queijo Prato           |  8.90 |    80 | Aurora         |           12 |
++------------+------------------------+-------+-------+----------------+--------------+
+32 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> select nome,preco from produtos;
++------------------------+-------+
+| nome                   | preco |
++------------------------+-------+
+| Sabão em Pó            | 25.00 |
+| Detergente             |  3.25 |
+| Mussarela              | 55.60 |
+| Iogurte natural        |  3.29 |
+| Papel Aluminio         |  7.59 |
+| Papel Toalha           |  4.24 |
+| Milho Verde            |  4.50 |
+| Ervilha                |  3.52 |
+| Carne Moída            | 35.90 |
+| Coxa de Frango         | 15.50 |
+| Detergente Ypê         |  2.49 |
+| Desinfetante Pinho Sol |  6.99 |
+| Leite Integral         |  4.89 |
+| Iogurte Natural        |  2.75 |
+| Papel Alumínio         |  5.50 |
+| Saco para Lixo 50L     |  7.30 |
+| Ervilha                |  3.52 |
+| Milho Verde            |  3.10 |
+| Carne Moída            | 35.90 |
+| Coxa de Frango         | 15.50 |
+| Banana Prata           |  4.20 |
+| Tomate Italiano        |  6.30 |
+| Shampoo Anticaspa      | 14.90 |
+| Desodorante Spray      |  9.80 |
+| Refrigerante Cola 2L   |  7.50 |
+| Suco de Uva Integral   | 12.00 |
+| Fone de Ouvido         | 49.90 |
+| Carregador USB         | 29.90 |
+| Pizza Calabresa        | 18.90 |
+| Lasanha Bolonhesa      | 17.50 |
+| Presunto Fatiado       |  6.80 |
+| Queijo Prato           |  8.90 |
++------------------------+-------+
+
+
+
+MariaDB [etecmcm2]> select *from  produtos where marca='Sadia' ;
++------------+-------------------+-------+-------+-------+--------------+
+| id_produto | nome              | preco | quant | marca | id_categoria |
++------------+-------------------+-------+-------+-------+--------------+
+|         10 | Coxa de Frango    | 15.50 |    78 | Sadia |            5 |
+|         20 | Coxa de Frango    | 15.50 |    78 | Sadia |            5 |
+|         30 | Lasanha Bolonhesa | 17.50 |    50 | Sadia |           10 |
++------------+-------------------+-------+-------+-------+--------------+
+
+
+
+MariaDB [etecmcm2]> select* from produtos where preco>20;
++------------+----------------+-------+-------+------------+--------------+
+| id_produto | nome           | preco | quant | marca      | id_categoria |
++------------+----------------+-------+-------+------------+--------------+
+|          1 | Sabão em Pó    | 25.00 |     4 | OMO        |            1 |
+|          3 | Mussarela      | 55.60 |   100 | Presidente |            2 |
+|          9 | Carne Moída    | 35.90 |    60 | Friboi     |            5 |
+|         19 | Carne Moída    | 35.90 |    60 | Friboi     |            5 |
+|         27 | Fone de Ouvido | 49.90 |    40 | Multilaser |            9 |
+|         28 | Carregador USB | 29.90 |    55 | Samsung    |            9 |
++------------+----------------+-------+-------+------------+--------------+
+
+
+
+MariaDB [etecmcm2]> select* from produtos where quant<=60;
++------------+-------------------+-------+-------+------------+--------------+
+| id_produto | nome              | preco | quant | marca      | id_categoria |
++------------+-------------------+-------+-------+------------+--------------+
+|          1 | Sabão em Pó       | 25.00 |     4 | OMO        |            1 |
+|          2 | Detergente        |  3.25 |    20 | Ypê        |            1 |
+|          5 | Papel Aluminio    |  7.59 |    50 | Wyda       |            3 |
+|          9 | Carne Moída       | 35.90 |    60 | Friboi     |            5 |
+|         15 | Papel Alumínio    |  5.50 |    60 | Wyda       |            3 |
+|         19 | Carne Moída       | 35.90 |    60 | Friboi     |            5 |
+|         23 | Shampoo Anticaspa | 14.90 |    50 | Clear      |            7 |
+|         27 | Fone de Ouvido    | 49.90 |    40 | Multilaser |            9 |
+|         28 | Carregador USB    | 29.90 |    55 | Samsung    |            9 |
+|         29 | Pizza Calabresa   | 18.90 |    60 | Perdigão   |           10 |
+|         30 | Lasanha Bolonhesa | 17.50 |    50 | Sadia      |           10 |
++------------+-------------------+-------+-------+------------+--------------+
+
+
+
+MariaDB [etecmcm2]> select p.nome, p.marca from produtos p join categorias c on p.id_categoria= c.id_categoria;
++------------------------+----------------+
+| nome                   | marca          |
++------------------------+----------------+
+| Sabão em Pó            | OMO            |
+| Detergente             | Ypê            |
+| Detergente Ypê         | Ypê            |
+| Desinfetante Pinho Sol | Pinho Sol      |
+| Mussarela              | Presidente     |
+| Iogurte natural        | Danone         |
+| Leite Integral         | Itambé         |
+| Iogurte Natural        | Nestlé         |
+| Papel Aluminio         | Wyda           |
+| Papel Toalha           | Scala          |
+| Papel Alumínio         | Wyda           |
+| Saco para Lixo 50L     | Plasútil       |
+| Milho Verde            | Quero          |
+| Ervilha                | Quero          |
+| Ervilha                | Quero          |
+| Milho Verde            | Bonduelle      |
+| Carne Moída            | Friboi         |
+| Coxa de Frango         | Sadia          |
+| Carne Moída            | Friboi         |
+| Coxa de Frango         | Sadia          |
+| Banana Prata           | Fazenda Sul    |
+| Tomate Italiano        | Orgânicos Vida |
+| Shampoo Anticaspa      | Clear          |
+| Desodorante Spray      | Rexona         |
+| Refrigerante Cola 2L   | Coca-Cola      |
+| Suco de Uva Integral   | Aurora         |
+| Fone de Ouvido         | Multilaser     |
+| Carregador USB         | Samsung        |
+| Pizza Calabresa        | Perdigão       |
+| Lasanha Bolonhesa      | Sadia          |
+| Presunto Fatiado       | Seara          |
+| Queijo Prato           | Aurora         |
++------------------------+----------------+
+32 rows in set (0.001 sec)
+
+
+
+
+
+MariaDB [etecmcm2]> select p.nome, c.nome_cat from produtos p join categorias c on p.id_categoria = c.id_categoria where c.nome_cat='Laticínios';
++-----------------+------------+
+| nome            | nome_cat   |
++-----------------+------------+
+| Mussarela       | Laticínios |
+| Iogurte natural | Laticínios |
+| Leite Integral  | Laticínios |
+| Iogurte Natural | Laticínios |
++-----------------+------------+
+4 rows in set (0.004 sec)
+//faltou o preço
+
+
+MariaDB [etecmcm2]> select c.nome_cat, count(*) as total_produtos from produtos p join categorias c on p.id_categoria= c.id_categoria group by c.nome_cat;
++-------------------+----------------+
+| nome_cat          | total_produtos |
++-------------------+----------------+
+| Bebidas           |              2 |
+| Carnes            |              4 |
+| Congelados        |              2 |
+| Eletroeletrônicos |              2 |
+| Embalagens        |              4 |
+| Enlatados         |              4 |
+| Frios             |              2 |
+| Hortifrut         |              2 |
+| Laticínios        |              4 |
+| Limpeza           |              4 |
+| Perfumaria        |              2 |
++-------------------+----------------+
+11 rows in set (0.001 sec)
+
+MariaDB [etecmcm2]> select * from produtos where preco between 10 and 20;
++------------+----------------------+-------+-------+----------+--------------+
+| id_produto | nome                 | preco | quant | marca    | id_categoria |
++------------+----------------------+-------+-------+----------+--------------+
+|         10 | Coxa de Frango       | 15.50 |    78 | Sadia    |            5 |
+|         20 | Coxa de Frango       | 15.50 |    78 | Sadia    |            5 |
+|         23 | Shampoo Anticaspa    | 14.90 |    50 | Clear    |            7 |
+|         26 | Suco de Uva Integral | 12.00 |    90 | Aurora   |            8 |
+|         29 | Pizza Calabresa      | 18.90 |    60 | Perdigão |           10 |
+|         30 | Lasanha Bolonhesa    | 17.50 |    50 | Sadia    |           10 |
++------------+----------------------+-------+-------+----------+--------------+
+6 rows in set (0.001 sec)
+
+MariaDB [etecmcm2]> select * from produtos where nome like 'P%';
++------------+------------------+-------+-------+----------+--------------+
+| id_produto | nome             | preco | quant | marca    | id_categoria |
++------------+------------------+-------+-------+----------+--------------+
+|          5 | Papel Aluminio   |  7.59 |    50 | Wyda     |            3 |
+|          6 | Papel Toalha     |  4.24 |    75 | Scala    |            3 |
+|         15 | Papel Alumínio   |  5.50 |    60 | Wyda     |            3 |
+|         29 | Pizza Calabresa  | 18.90 |    60 | Perdigão |           10 |
+|         31 | Presunto Fatiado |  6.80 |   100 | Seara    |           12 |
++------------+------------------+-------+-------+----------+--------------+
+5 rows in set (0.001 sec)
+
+MariaDB [etecmcm2]> select distinct marca from produtos;
++----------------+
+| marca          |
++----------------+
+| OMO            |
+| Ypê            |
+| Presidente     |
+| Danone         |
+| Wyda           |
+| Scala          |
+| Quero          |
+| Friboi         |
+| Sadia          |
+| Pinho Sol      |
+| Itambé         |
+| Nestlé         |
+| Plasútil       |
+| Bonduelle      |
+| Fazenda Sul    |
+| Orgânicos Vida |
+| Clear          |
+| Rexona         |
+| Coca-Cola      |
+| Aurora         |
+| Multilaser     |
+| Samsung        |
+| Perdigão       |
+| Seara          |
++----------------+
+24 rows in set (0.000 sec)
+
+
+
+
